@@ -15,6 +15,13 @@ spec:
       containers:
       - name: customer-app
         image: docker.io/dfoley3118/customer-app:latest
+        resources:
+          limits:
+            cpu: "100"
+            memory: "200Mi"
+          requests:
+            cpu: "100"
+            memory: "200Mi"
         ports:
         - containerPort: 8080
 ---
@@ -49,6 +56,13 @@ spec:
       containers:
       - name: order-app
         image: docker.io/dfoley3118/order-app:latest
+        resources:
+          limits:
+            cpu: "100"
+            memory: "200Mi"
+          requests:
+            cpu: "100"
+            memory: "200Mi"
         ports:
         - containerPort: 8080
 ---
@@ -83,6 +97,13 @@ spec:
       containers:
       - name: payment-app
         image: docker.io/dfoley3118/payment-app:latest
+        resources:
+          limits:
+            cpu: "100"
+            memory: "200Mi"
+          requests:
+            cpu: "100"
+            memory: "200Mi"
         ports:
         - containerPort: 8080
 ---
@@ -117,6 +138,13 @@ spec:
       containers:
       - name: inventory-app
         image: docker.io/dfoley3118/inventory-app:latest
+        resources:
+          limits:
+            cpu: "100"
+            memory: "200Mi"
+          requests:
+            cpu: "100"
+            memory: "200Mi"
         ports:
         - containerPort: 8080
 ---
@@ -151,6 +179,13 @@ spec:
       containers:
       - name: service-mesh-ui
         image: docker.io/dfoley3118/service-mesh-ui:latest
+        resources:
+          limits:
+            cpu: "100"
+            memory: "200Mi"
+          requests:
+            cpu: "100"
+            memory: "200Mi"
         ports:
         - containerPort: 3000
 ---
