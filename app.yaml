@@ -1,15 +1,7 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: nto-payment
-  labels:
-    istio-injection: enabled
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: customer-app
-  namespace: nto-payment
 spec:
   selector:
     matchLabels:
@@ -30,7 +22,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: customer-service
-  namespace: nto-payment
   labels:
     run: customer-app
 spec:
@@ -45,7 +36,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: order-app
-  namespace: nto-payment
 spec:
   selector:
     matchLabels:
@@ -66,7 +56,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: order-service
-  namespace: nto-payment
   labels:
     run: order-app
 spec:
@@ -81,7 +70,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: payment-app
-  namespace: nto-payment
 spec:
   selector:
     matchLabels:
@@ -102,7 +90,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: payment-service
-  namespace: nto-payment
   labels:
     run: payment-app
 spec:
@@ -117,7 +104,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: inventory-app
-  namespace: nto-payment
 spec:
   selector:
     matchLabels:
@@ -138,7 +124,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: inventory-service
-  namespace: nto-payment
   labels:
     run: inventory-app
 spec:
@@ -153,7 +138,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: service-mesh-ui
-  namespace: nto-payment
 spec:
   selector:
     matchLabels:
@@ -174,7 +158,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: service-mesh-ui-service
-  namespace: nto-payment
 spec:
   ports:
   - name: http
